@@ -1,0 +1,23 @@
+<style type="text/css">
+	form label, form span{
+		display: block;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	form ul {
+		color : red;
+	}
+</style>
+
+<h1>Edit page</h1>
+
+<?php	
+		$form = $this->form;	
+		$form->prepare();
+		
+		$form->get('submit')->setValue('Update');
+		echo $this->form()->openTag($form);
+		echo $this->formCollection($form);
+		echo $this->form()->closeTag();
+
+?>

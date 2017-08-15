@@ -1,0 +1,30 @@
+<style type="text/css">
+	th{
+		background-color: skyblue;
+	}
+
+</style>
+<pre>
+	<center><h3>Admin Page</h3></center>
+</pre>
+<a class="btn btn-primary" href="<?php echo $this->url('admin-blog', array('action' => 'add')); ?>">add content</a><br/>
+<table class="table table-striped">
+	<tr>
+		 <th>Id</th>
+		 <th>Title</th>
+		 <th>Author</th>
+		 <th>Action</th>
+	</tr>
+	<?php foreach($blogs as $blog) : ?>
+	<tr>
+		<td><?php echo $blog['id']; ?></td>
+		<td><?php echo $blog['title']; ?></td>
+		<td><?php echo $blog['writer']; ?></td>
+		<td>
+			<a class="glyphicon glyphicon-edit" href="<?php echo $this->url('admin-blog', array('action' => 'edit', 'id' => $blog['id'])); ?>"></a>
+			<a class="glyphicon glyphicon-trash" href="<?php echo $this->url('admin-blog', array('action' => 'delete', 'id' => $blog['id'])); ?>"></a>
+			
+		</td>
+	</tr>
+	<?php endforeach; ?>
+</table>

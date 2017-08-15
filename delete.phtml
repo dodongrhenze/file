@@ -1,0 +1,12 @@
+<p>
+	are you sure delete?
+</p>
+<?php 
+	$url = $this->url('admin-blog', array('action' => 'delete', 'id' => $this->id, ));
+?>
+<form method="post" action="<?php echo $url; ?>">
+	<div>
+		<input type="submit" name="del" value="Yes">
+		<input type="submit" name="del" value="No">
+	</div>
+</form>
